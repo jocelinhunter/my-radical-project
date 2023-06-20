@@ -1,0 +1,24 @@
+equilaterial triangle
+base 1.0
+center 0.4 -1.2
+
+square
+width 3.2
+center -0.2 2.2
+
+circle
+radius 0.2
+center 9.9 1.1
+
+ellipse
+a 3.2
+b 2.2
+center 1.0 3.3
+
+---------
+shape 1: triangle
+area: 3.23
+perimeter: 4.4
+
+shape 2: square
+.....
