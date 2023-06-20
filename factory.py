@@ -1,23 +1,11 @@
 import cmath
 import math
-class Shape:
-    def name(self):
-        raise RuntimeError ("Error: Child class function not defined")
-
+from classdef import *
 shape = input("What shape would you like to make: triangle, rectangle, circle, or ellipse?").lower().strip()
 
 if shape == "triangle": 
     typeT = input("What type of triangle: Equilateral, Isosceles, or Scalene?").lower().strip()
     if typeT == "equilateral":
-        class EqTriangle(Shape):
-            def __init__(self, side, x, y, Eqequation):
-                self.x = x
-                self.y= y
-                self.side = side
-                self.equation = Eqequation
-            def name(self):
-                return "Equilateral Triangle"
-
         ETx = float(input("What's the x coordinate of the centerpoint?"))
         ETy = float(input("What's the y coordinate of the centerpoint?"))
         Eqside = float(input("What is the length of a side?"))
@@ -37,18 +25,7 @@ if shape == "triangle":
         print(t1.name())
 
 
-    elif typeT == "isosceles": 
-        class IsTriangle(Shape):
-            def __init__(self, Isbase, Isside, ITx, ITy, Isformula):
-                self.base = Isbase
-                self.side =Isside
-                self.x = ITx
-                self.y = ITy
-                self.formula = Isformula
-            def name(self):
-                return "Isosceles Triangle"
-    
-
+    elif typeT == "isosceles":
         Isside = float(input("What is the length of the two equal sides?"))
         Isbase = float(input("What is the length of the base?"))
         ITx = float(input("What is the x-coordinate of the centerpoint?"))
@@ -70,19 +47,7 @@ if shape == "triangle":
         Isname= t2.name()
         print(t2.name())
 
-
     elif typeT == "scalene":
-        class ScTriangle(Shape):
-            def __init__(self, Scx, Scy, Scside1, Scside2, Scside3, Scfunction):
-                self.side1 = Scside1
-                self.side2 = Scside2
-                self.side3 = Scside3
-                self.x = Scx
-                self.y = Scy
-                self.function = Scfunction 
-            def name(self):
-                return "Scalene Triangle"
-
         Scy = float(input("What is the y-coordnate of the centerpoint?"))
         Scx = float(input("What is the x-coordinate of the centerpoint?"))
         Scside1 = float(input("What's the length of side 1?"))
@@ -110,16 +75,6 @@ if shape == "triangle":
         print("Must be a valid triangle- Check spelling.")
 
 elif shape == "rectangle": 
-    class Rectangle(Shape):
-        def __init__(self, Rlength, Rheight, Rx, Ry, Rfunction):
-            self.length = Rlength
-            self.height = Rheight
-            self.x = Rx
-            self.y = Ry
-            self.function = Rfunction
-        def name(self):
-            return "Rectangle"
-
     Rheight = float(input("What is the height of the rectangle?"))
     Rlength = float(input("What is the length of the rectangle?"))
     Rx = input("What is the x-coordinate of the centerpoint")
@@ -141,15 +96,6 @@ elif shape == "rectangle":
     print(Rname.name())
 
 elif shape == "circle":
-    class Circle(Shape):
-        def __init__(self, radius, Cx, Cy, Cfunction):
-            self.radius = radius
-            self.Cx = Cx
-            self.Cy = Cy
-            self.function = Cfunction
-        def name(self):
-            return "Circle"
-        
     Cradius = float(input("What's the radius of the circle?"))
     Cfunction = input("Would you like to find the circumfrence or area?")
     if Cfunction == "circumfrence":
@@ -162,16 +108,6 @@ elif shape == "circle":
         print("Error: Check spelling. ")
 
 elif shape == "ellipse":
-    class Ellipse(Shape):
-        def __init__(self, Eradius1, Eradius2, Ex, Ey, Efunction):
-            self.Eradius1 = Eradius1
-            self.Erasius1 = Eradius2
-            self.Ex = Ex
-            self.Ey = Ey
-            self.Efunction = Efunction
-        def name(self):
-            return "Ellipse"
-        
     Eradius1 = float(input("What's the length of the longer radius?"))
     Eradius2 = float(input("What's the length of the shorter radius?"))
     Ex = float(input("What's the x-coordinate of the certerpoint?"))
