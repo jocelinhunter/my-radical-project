@@ -10,21 +10,17 @@ if shape == "triangle":
         ETy = float(input("What's the y coordinate of the centerpoint?"))
         Eqside = float(input("What is the length of a side?"))
         Eqequation = input("Would you like to find the area or perimeter?").lower().strip()
-
         t1= EqTriangle(Eqside, ETx, ETy, Eqequation)
-        if Eqequation =="area":
-            areaET = print("area =", 1/2* Eqside *cmath.sin(math.pi/3)*Eqside)
-            print(areaET)
+        if Eqequation == "area":
+            print(t1.area())
         elif Eqequation == "perimeter":
-            perimeterET = Eqside*3
-            print(perimeterET)
+            print(t1.perimeter())
         else:
             print("Invalid input, check spelling")
 
         EQname = t1.name()
         print(t1.name())
 
- 
     elif typeT == "isosceles":
         Isside = float(input("What is the length of the two equal sides?"))
         Isbase = float(input("What is the length of the base?"))
@@ -34,13 +30,9 @@ if shape == "triangle":
 
         t2 = IsTriangle(Isbase, Isside, ITx, ITy, Isformula)
         if Isformula == "area":
-            angleIs = cmath.acos((Isside**2+Isbase**2-Isside**2)/(2*Isside*Isbase))
-            heightIs = cmath.sin(angleIs)* Isside
-            ISarea = 1/2* Isbase * heightIs
-            print(ISarea)
+            print(t2.area())
         elif Isformula == "perimeter":
-            ISperimeter = 2*Isside+Isbase
-            print(ISperimeter)
+            print(t2.perimeter())
         else:
             print("Invalid input, check spelling")
 
@@ -60,11 +52,9 @@ if shape == "triangle":
         if Scfunction == "area":
             angleSc = cmath.acos((Scside1**2+Scside2**2-Scside3**2)/(2*Scside1*Scside2))
             heightSc = cmath.sin(angleSc)* Scside2
-            areaSc= 1/2*Scside1*heightSc
-            print("Area =", areaSc)
+            print("Area =", t3.area())
         elif Scfunction == "perimeter":
-            perimeterSc = Scside1 + Scside2 + Scside3
-            print("Perimeter =", perimeterSc)
+            print("Perimeter =", t3.perimeter())
         else:
             print("Invalid input, check spelling")
 
@@ -81,28 +71,28 @@ elif shape == "rectangle":
     Ry = input("What is the y-coordinate of the centerpoint?")
     Rfunction = input("Whould you like to find the area or perimeter?")
 
-    Rname = Rectangle(Rlength, Rheight, Rx, Ry)
+    R1 = Rectangle(Rlength, Rheight, Rx, Ry)
 
     if Rfunction == "perimeter":
-        Rperimeter = float(Rlength*2 + Rheight*2)
-        print("perimeter =", Rperimeter)    
+      print(R1.perimeter())
     elif Rfunction == "area":
-        Rarea = float(Rheight * Rlength)
-        print("area = ", Rarea)
+        print(R1.area())
     else:
         print("Invalid input, check spelling")
 
-    name = Rname.name()
-    print(Rname.name())
+    name = R1.name()
+    print(R1.name())
 
 elif shape == "circle":
-    Cradius = float(input("What's the radius of the circle?"))
+    radius = float(input("What's the radius of the circle?"))
+    Cx= float(input("What is the x coordinate of the centerpoint?"))
+    Cy= float(input("What is the y coordinate of the centerpoint?"))
     Cfunction = input("Would you like to find the circumfrence or area?")
+    C1 = Circle(radius, Cx, Cy)
     if Cfunction == "circumfrence":
-        Cperimeter = float(2*math.pi* Cradius)
-        print("Circumfrence =", Cperimeter)
+        print("Circumfrence =", C1.perimeter())
     elif Cfunction == "area":
-        Carea = float(math.pi * Cradius**2)
+        Carea = float(math.pi * radius**2)
         print("area =", Carea)
     else:
         print("Error: Check spelling. ")
@@ -113,12 +103,11 @@ elif shape == "ellipse":
     Ex = float(input("What's the x-coordinate of the certerpoint?"))
     Ey = float(input("What's the y-coordinate of the centerpoint?"))
     Efunction = input("Are you trying to find the circumfrence or area?").lower().strip()
+    E1 = Ellipse(Eradius1, Eradius2, Ex, Ey)
     if Efunction == "area":
-        Earea= math.pi*Eradius1*Eradius2
-        print("Area = approximately", Earea)
+        print("Area = approximately", E1.area())
     elif Efunction == "circumfrence":
-        Ecircumfrence = math.pi*(3*(Eradius1 + Eradius2) - math.sqrt((3*Eradius1 + Eradius2)*(Eradius1 + 3*Eradius2)))
-        print("Circumfrence = approximately", Ecircumfrence)
+        print("Circumfrence = approximately", E1.perimeter())
     else:
         print("Error: Check spelling")
 

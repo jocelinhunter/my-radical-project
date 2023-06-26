@@ -18,8 +18,8 @@ class ScTriangle(Shape):
         def name(self):
             return "Scalene Triangle"
         def area(self):
-            heightSc = cmath.sin(angleSc)* self.side2
             angleSc = cmath.acos((self.side1**2+self.side2**2-self.side3**2)/(2*self.side1*self.side2))
+            heightSc = cmath.sin(angleSc)* self.side2
             return 1/2*self.side1*heightSc
         def perimeter(self):
              return self.side1 + self.side2 + self.side3
@@ -31,6 +31,10 @@ class EqTriangle(Shape):
                 self.side = side
             def name(self):
                 return "Equilateral Triangle"
+            def area(self):
+                 return (1/2*self.side*(math.sin(math.pi/3)*self.side))
+            def perimeter(self):
+                 return self.side*3
             
 class IsTriangle(Shape):
             def __init__(self, Isbase, Isside, ITx, ITy):
@@ -40,7 +44,12 @@ class IsTriangle(Shape):
                 self.y = ITy
             def name(self):
                 return "Isosceles Triangle"
-
+            def area(self):
+                angleIs = cmath.acos((self.side**2+self.base**2-self.side**2)/(2*self.side*self.base))
+                heightIs = cmath.sin(angleIs)* self.side
+                return 1/2* self.base * heightIs
+            def perimeter(self):
+                 return 2*self.side+self.base
 
 class Rectangle(Shape):
         def __init__(self, Rlength, Rheight, Rx, Ry):
