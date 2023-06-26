@@ -24,7 +24,7 @@ if shape == "triangle":
         EQname = t1.name()
         print(t1.name())
 
-
+ 
     elif typeT == "isosceles":
         Isside = float(input("What is the length of the two equal sides?"))
         Isbase = float(input("What is the length of the base?"))
@@ -81,7 +81,7 @@ elif shape == "rectangle":
     Ry = input("What is the y-coordinate of the centerpoint?")
     Rfunction = input("Whould you like to find the area or perimeter?")
 
-    Rname = Rectangle(Rlength, Rheight, Rx, Ry, Rfunction)
+    Rname = Rectangle(Rlength, Rheight, Rx, Ry)
 
     if Rfunction == "perimeter":
         Rperimeter = float(Rlength*2 + Rheight*2)
