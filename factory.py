@@ -10,7 +10,7 @@ if shape == "triangle":
         ETy = float(input("What's the y coordinate of the centerpoint?"))
         Eqside = float(input("What is the length of a side?"))
         Eqequation = input("Would you like to find the area or perimeter?").lower().strip()
-        t1= EqTriangle(Eqside, ETx, ETy, Eqequation)
+        t1= EqTriangle(Eqside, ETx, ETy)
         if Eqequation == "area":
             print(t1.area())
         elif Eqequation == "perimeter":
@@ -28,7 +28,7 @@ if shape == "triangle":
         ITy = float(input("What is the y-coordnate of the centerpoint?"))
         Isformula = input("Are you looking for the area or perimeter?").lower().strip()
 
-        t2 = IsTriangle(Isbase, Isside, ITx, ITy, Isformula)
+        t2 = IsTriangle(Isbase, Isside, ITx, ITy)
         if Isformula == "area":
             print(t2.area())
         elif Isformula == "perimeter":
@@ -47,7 +47,7 @@ if shape == "triangle":
         Scside3 = float(input("What's the length of side 3?"))
         Scfunction = input("Are you looking for the area or perimeter?").strip().lower()
 
-        t3= ScTriangle(Scx, Scy, Scside1, Scside2, Scside3, Scfunction)
+        t3= ScTriangle(Scx, Scy, Scside1, Scside2, Scside3)
 
         if Scfunction == "area":
             angleSc = cmath.acos((Scside1**2+Scside2**2-Scside3**2)/(2*Scside1*Scside2))
