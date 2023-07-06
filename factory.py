@@ -1,4 +1,3 @@
-import cmath
 import math
 from classdef import *
 shape = input("What shape would you like to make: triangle, rectangle, circle, or ellipse?").lower().strip()
@@ -50,8 +49,6 @@ if shape == "triangle":
         t3= ScTriangle(Scx, Scy, Scside1, Scside2, Scside3)
 
         if Scfunction == "area":
-            angleSc = cmath.acos((Scside1**2+Scside2**2-Scside3**2)/(2*Scside1*Scside2))
-            heightSc = cmath.sin(angleSc)* Scside2
             print("Area =", t3.area())
         elif Scfunction == "perimeter":
             print("Perimeter =", t3.perimeter())
@@ -67,8 +64,8 @@ if shape == "triangle":
 elif shape == "rectangle": 
     Rheight = float(input("What is the height of the rectangle?"))
     Rlength = float(input("What is the length of the rectangle?"))
-    Rx = input("What is the x-coordinate of the centerpoint")
-    Ry = input("What is the y-coordinate of the centerpoint?")
+    Rx = float(input("What is the x-coordinate of the centerpoint"))
+    Ry = float(input("What is the y-coordinate of the centerpoint?"))
     Rfunction = input("Whould you like to find the area or perimeter?")
 
     R1 = Rectangle(Rlength, Rheight, Rx, Ry)
@@ -84,15 +81,15 @@ elif shape == "rectangle":
     print(R1.name())
 
 elif shape == "circle":
-    radius = float(input("What's the radius of the circle?"))
+    Cradius = float(input("What's the radius of the circle?"))
     Cx= float(input("What is the x coordinate of the centerpoint?"))
     Cy= float(input("What is the y coordinate of the centerpoint?"))
     Cfunction = input("Would you like to find the circumfrence or area?")
-    C1 = Circle(radius, Cx, Cy)
+    C1 = Circle(Cradius, Cx, Cy)
     if Cfunction == "circumfrence":
         print("Circumfrence =", C1.perimeter())
     elif Cfunction == "area":
-        Carea = float(math.pi * radius**2)
+        Carea = float(math.pi * Cradius**2)
         print("area =", Carea)
     else:
         print("Error: Check spelling. ")

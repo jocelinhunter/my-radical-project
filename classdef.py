@@ -65,16 +65,16 @@ class Rectangle(Shape):
             return self.length*2+self.height*2
 
 class Circle(Shape):
-        def __init__(self, radius, Cx, Cy):
-            self.radius = radius
+        def __init__(self, Cradius, Cx, Cy):
+            self.Cradius = Cradius
             self.Cx = Cx
             self.Cy = Cy
         def name(self):
             return "Circle"
         def area (self):
-                return math.pi*self.radius**2
+                return math.pi*self.Cradius**2
         def perimeter (self):
-             return 2*math.pi*self.radius
+             return 2*math.pi*self.Cradius
 
 class Ellipse(Shape):
         def __init__(self, Eradius1, Eradius2, Ex, Ey):
