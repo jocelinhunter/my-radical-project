@@ -20,6 +20,7 @@ if shape == "rectangle":
     print("Building and viewing geometry")
     capsProblem.geometry.view() 
 
+
 if shape == "triangle":
     if typeT == "equilateral":
         filename = "EqTri.csm"
@@ -62,11 +63,15 @@ if shape == "triangle":
         s1 = Scside1
         s2 = Scside2
         s3 = Scside3
-
-
-
+        xstart = Scx
+        ystart = Scy
+        ScTri.despmtr.side1 = s1
+        ScTri.despmtr.side2 = s2
+        ScTri.despmtr.side3 = s3
+        ScTri.despmtr.xp = xstart
+        ScTri.despmtr.yp = ystart
         print("Loading geometry...")
-        capsProblem.geomtery.view()
+        capsProblem.geometry.view()
 
 
 if shape == "circle":
@@ -82,6 +87,7 @@ if shape == "circle":
     Circ.despmtr["ycent"].value = ycent
     print("Loading Geometry...")
     capsProblem.geometry.view()
+
 
 if shape == "ellipse":
     filename = "Ell.csm"
